@@ -3,17 +3,16 @@ import { Route , Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SecondPage from "./pages/SecondPage";
 import LastPage from "./pages/LastPage";
-import NavBar from "./components/layout/NavBar";
+import Layout from "./components/layout/Layout";
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
+    <Layout>
       <Routes>
         <Route path="/" element = {<HomePage/>} />          
         <Route path="/second" element={<SecondPage/>}/>          
         <Route path="/last" element= {<LastPage/>}/>
       </Routes>
-    </div>
+    </Layout>
   );
 }
 
