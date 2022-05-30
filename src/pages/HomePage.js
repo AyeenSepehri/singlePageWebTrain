@@ -1,4 +1,5 @@
 import React from 'react'
+import InstrumentationCard from '../components/Instruments/InstrumentationCard';
 const instruments = [
   {
       id:1,
@@ -34,9 +35,7 @@ function HomePage() {
     <div>
       <h1>instruments</h1>
       <div>
-        {instruments.map((items) => {
-          return <h2 key={items.id}>{items.name}</h2>
-        })}
+        <InstrumentationCard Items={instruments} />
       </div>
     </div>
   )
