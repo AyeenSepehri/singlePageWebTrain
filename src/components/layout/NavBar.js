@@ -3,9 +3,9 @@ import {Link} from "react-router-dom"
 import classes from "./NavBar.module.css"
 function NavBar() {
   return (
-    <header>
-        <div className={classes.logo}>NavBar</div>
-        <ul>
+    <header className={classes.nav}>
+        <h1 className={classes.logo}>Single Page Web Train</h1>
+        <ul className={classes.list}>
             <li><Link to="/">Home Page</Link></li>
             <li><Link to="/second">Second Page</Link></li>
             <li><Link to="/last">Last Page</Link></li>

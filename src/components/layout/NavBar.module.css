@@ -1,3 +1,20 @@
+.nav{
+    background-color: rgb(184, 184, 252);
+    display: flex;
+}
 .logo{
     color: brown;
 } 
+.list{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    text-align: right;
+    list-style: none;
+}
+li{
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: 400;
+    float: right;
+}
