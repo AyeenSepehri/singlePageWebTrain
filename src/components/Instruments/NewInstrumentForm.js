@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef } from 'react'
 import Card from "../ui/Card"
 import classes from "./NewInstrumentForm.module.css"
-function NewInstrumentFrom() {
+function NewInstrumentForm(props) {
     const nameInputRef = useRef()
     const imageInputRef = useRef()
     const typeInputRef = useRef()
@@ -20,7 +20,7 @@ function NewInstrumentFrom() {
             type : enteredType,
             info : enteredInfo
         }
-        console.log(InstrumentData)
+        props.postData(InstrumentData);
     }
   return (
     <Card>
@@ -49,4 +49,4 @@ function NewInstrumentFrom() {
   )
 }
 
-export default NewInstrumentFrom
+export default NewInstrumentForm
