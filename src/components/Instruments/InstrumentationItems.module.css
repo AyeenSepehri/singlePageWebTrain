@@ -19,14 +19,14 @@ img{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.1em;
 }
-.prev-btn,.next-btn {
+.favoritebtn {
     display: inline-block;
     background-color: #210fbd;
     border-radius: 10px;
     border: 4px double #cccccc;
     color: #eeeeee;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     padding: 5px;
     width: 10vw;
     -webkit-transition: all 0.5s;

@@ -14,6 +14,9 @@ function InstrumentationItems(props) {
             <h4 className={classes.instrument}>{props.name}</h4>
             <p className={classes.type}>{props.type}</p>
             <p className={classes.info}>{props.info}</p>
+            <div className={classes.btnsection}>
+              <button className={classes.favoritebtn}>Add to favorite</button>
+            </div>
         </section>
     </Card>
   )
