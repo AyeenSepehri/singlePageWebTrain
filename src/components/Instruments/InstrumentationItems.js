@@ -1,7 +1,24 @@
 import React from 'react'
+import {useContext} from "react"
 import classes from "./InstrumentationItems.module.css"
 import Card from '../ui/Card'
+import FavoriteContext from "../../store/favorites.context"
 function InstrumentationItems(props) {
+  const favoriteCtx = useContext(FavoriteContext)
+  const ItemIsFavorite = favoriteCtx.itemIsFavorite(props.id)
+  const toggleFavoritesStatusHandler = () => {
+    if(ItemIsFavorite){
+      favoriteCtx.removeFavoritesInstrument(props.id)
+    }else{
+      favoriteCtx.addFavoritesInstrument({
+        id: props.id,
+        image: props.image,
+        name: props.name,
+        type: props.type,
+        info: props.info,
+      })
+    }
+  }
   return (
     <Card>
       <section className={classes.container}>
@@ -15,7 +32,9 @@ function InstrumentationItems(props) {
             <p className={classes.type}>{props.type}</p>
             <p className={classes.info}>{props.info}</p>
             <div className={classes.btnsection}>
-              <button className={classes.favoritebtn}>Add to favorite</button>
+              <button className={classes.favoritebtn} onClick={toggleFavoritesStatusHandler}>
+                {ItemIsFavorite ? "Remove Favorite" : "To Favorite"}
+              </button>
             </div>
         </section>
     </Card>
