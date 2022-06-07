@@ -5,12 +5,15 @@ import Card from '../ui/Card'
 import FavoriteContext from "../../store/favorites.context"
 function InstrumentationItems(props) {
   const favoriteCtx = useContext(FavoriteContext)
+  //inja props.id, id az koja miad va be che dardi mikhore.?
   const ItemIsFavorite = favoriteCtx.itemIsFavorite(props.id)
   const toggleFavoritesStatusHandler = () => {
     if(ItemIsFavorite){
+      //va hamin ja hm hamintor
       favoriteCtx.removeFavoritesInstrument(props.id)
     }else{
       favoriteCtx.addFavoritesInstrument({
+        //inja hm nemidoonm chera ba return sync nashod
         id: props.id,
         image: props.image,
         name: props.name,
