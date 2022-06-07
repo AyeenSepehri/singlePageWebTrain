@@ -18,21 +18,16 @@ export function FavoriteContextProvider(props) {
   }
   const removeFavoritesInstrumentHandler = (instrumentId) => {
     setUserFavorites(prevUserFavorite => {
-      //yeki inja etelaati ke filter mishe az koja miad
-      // va hamintor paein ke some mishe
       return prevUserFavorite.filter(instrument => instrument.id === !instrumentId)
     })
   }
   const itemIsFavoriteHandler = (instrumentId) => {
-    setUserFavorites(prevUserFavorite => {
-      //yeki hm inja vaghti in code ro az comment dar miaram chizi Dg load nemishe
-      // return prevUserFavorite.some(instrument => instrument.id === instrumentId)
-    })
+    return userFavorites.some(instrument => instrument.id === instrumentId)
   }
+
   const context = {
     favorites : userFavorites,
-    //inja hm .length ro nemishnase
-    // totalFavorites : userFavorites.length,
+    totalFavorites : userFavorites.length,
     addFavoritesInstrument : addFavoritesInstrumentHandler,
     removeFavoritesInstrument : removeFavoritesInstrumentHandler,
     itemIsFavorite : itemIsFavoriteHandler,
