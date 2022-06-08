@@ -6,13 +6,15 @@ import * as yup from "yup";
 import Card from "../ui/Card"
 import classes from "./NewInstrumentForm.module.css"
 const InstrumentSchema = yup.object().shape({
-    name : yup.string().required("fill name correct"),
-    image : yup.string().url().required("fill url correct"),
-    type : yup.string().required("fill type correct"),
-    info : yup.string().required("fill info correct"),
+    name : yup.string().required(),
+    image : yup.string().url().required(),
+    type : yup.string().required(),
+    info : yup.string().required(),
 }) 
 function NewInstrumentForm(props) {
-    const {register,handleSubmit,formState:{errors}} = useForm({resolver : yupResolver(InstrumentSchema)})
+    const {register,handleSubmit,formState:{errors}} = useForm({
+        resolver : yupResolver(InstrumentSchema)
+    })
     // console.log(errors)
     const nameInputRef = useRef()
     const imageInputRef = useRef()
@@ -34,11 +36,11 @@ function NewInstrumentForm(props) {
     }
   return (
     <Card>
-        <form className={classes.form} onSubmit={submitHandler}>
+        <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
             <div className={classes.control}>
                 <label htmlFor='name'>Instrument's name</label>
                 <input type="text" id="name" {...register("name")} ref={nameInputRef}/>
-                {errors.name && <p>{errors.name.message}</p>}
+                <p>{errors.name?.message}</p>
             </div>
             <div className={classes.control}>
                 <label htmlFor='image'>Instrument's image</label>
