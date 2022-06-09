@@ -1,20 +1,21 @@
 import React from 'react'
 import { useRef } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Card from "../ui/Card"
 import classes from "./NewInstrumentForm.module.css"
-const InstrumentSchema = yup.object().shape({
+const InstrumentSchema = yup.object({
     name : yup.string().required(),
     image : yup.string().url().required(),
-    type : yup.string().required(),
+    type : yup.number().required(),
     info : yup.string().required(),
 }) 
 function NewInstrumentForm(props) {
     const {register,handleSubmit,formState:{errors}} = useForm({
         resolver : yupResolver(InstrumentSchema)
     })
+    console.log(errors)
     // console.log(errors)
     const nameInputRef = useRef()
     const imageInputRef = useRef()
@@ -33,7 +34,9 @@ function NewInstrumentForm(props) {
             info : enteredInfo
         }
         props.postData(InstrumentData);
+
     }
+    //vaghti handleSubmit ro be onSubmit midam dige submitHandler va dar asl InstrumentData ro nemishnase
   return (
     <Card>
         <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
