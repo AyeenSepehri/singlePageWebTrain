@@ -17,16 +17,19 @@ function NewInstrumentForm(props) {
     })
     console.log(errors)
     // console.log(errors)
-    const nameInputRef = useRef()
-    const imageInputRef = useRef()
-    const typeInputRef = useRef()
-    const infoInputRef = useRef()
+    // const nameInputRef = useRef()
+    // const imageInputRef = useRef()
+    // const typeInputRef = useRef()
+    // const infoInputRef = useRef()
+    // const submitHandler = (data) => {
+    //     console.log(data)
+    // }
     const submitHandler = (event) => {
         event.preventDefault();
-        const enteredName = nameInputRef.current.value
-        const enteredImage = imageInputRef.current.value
-        const enteredType = typeInputRef.current.value
-        const enteredInfo = infoInputRef.current.value
+        const enteredName = register.name.current.value
+        const enteredImage = register.image.current.value
+        const enteredType = register.type.current.value
+        const enteredInfo = register.info.current.value
         const InstrumentData = {
             name : enteredName,
             image : enteredImage,
@@ -42,22 +45,22 @@ function NewInstrumentForm(props) {
         <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
             <div className={classes.control}>
                 <label htmlFor='name'>Instrument's name</label>
-                <input type="text" id="name" {...register("name")} ref={nameInputRef}/>
+                <input type="text" id="name" {...register("name")}/>
                 <p>{errors.name?.message}</p>
             </div>
             <div className={classes.control}>
                 <label htmlFor='image'>Instrument's image</label>
-                <input type="url" id="image" {...register("image")} ref={imageInputRef}/>
+                <input type="url" id="image" {...register("image")}/>
                 {errors.image && <p>{errors.image.message}</p>}
             </div>
             <div className={classes.control}>
                 <label htmlFor='type'>Instrument's type</label>
-                <input type="text" id="type" {...register("type")} ref={typeInputRef}/>
+                <input type="text" id="type" {...register("type")}/>
                 {errors.type && <p>{errors.type.message}</p>}
             </div>
             <div className={classes.control}>
                 <label htmlFor='info'>Instrument's info</label>
-                <textarea id="info" rows="5" {...register("info")} ref={infoInputRef}></textarea>
+                <textarea id="info" rows="5" {...register("info")}></textarea>
                 {errors.info && <p>{errors.info.message}</p>}
             </div>
             <div className={classes.action}>
