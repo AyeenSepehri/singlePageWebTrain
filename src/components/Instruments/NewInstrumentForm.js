@@ -24,19 +24,21 @@ function NewInstrumentForm(props) {
     // const submitHandler = (data) => {
     //     console.log(data)
     // }
-    const submitHandler = (event) => {
-        event.preventDefault();
-        const enteredName = register.name.current.value
-        const enteredImage = register.image.current.value
-        const enteredType = register.type.current.value
-        const enteredInfo = register.info.current.value
-        const InstrumentData = {
-            name : enteredName,
-            image : enteredImage,
-            type : enteredType,
-            info : enteredInfo
-        }
-        props.postData(InstrumentData);
+    const submitHandler = (data) => {
+        console.log(data)
+        // event.preventDefault();
+        // const enteredName = register.name.current.value
+        // const enteredImage = register.image.current.value
+        // const enteredType = register.type.current.value
+        // const enteredInfo = register.info.current.value
+        // const InstrumentData = {
+        //     name : enteredName,
+        //     image : enteredImage,
+        //     type : enteredType,
+        //     info : enteredInfo
+        // }
+        // props.postData(InstrumentData);
+        props.postData(data);
 
     }
     //vaghti handleSubmit ro be onSubmit midam dige submitHandler va dar asl InstrumentData ro nemishnase
