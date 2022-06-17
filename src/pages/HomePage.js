@@ -7,7 +7,7 @@ function HomePage() {
   const [loaded, setLoaded] = useState([])
 useEffect(() => {
   setLoading(true)
-  fetch("https://addinstrument-train-default-rtdb.firebaseio.com/Instrument.json"
+  fetch("https://addinstrument-train-default-rtdb.firebaseio.com/instrument.json"
   ).then((response) => {
     return response.json()
   }).then((data) => {

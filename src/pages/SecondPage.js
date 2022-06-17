@@ -8,7 +8,7 @@ function SecondPage() {
   const AddInstrument = (InstrumentData) => {
 
       fetch(
-        "https://addinstrument-train-default-rtdb.firebaseio.com/Instrument.json",
+        "https://addinstrument-train-default-rtdb.firebaseio.com/instrument.json",
         {
           method : "POST",
           body : JSON.stringify(InstrumentData),
