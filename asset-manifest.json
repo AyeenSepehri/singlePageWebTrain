@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/singlePageWebTrain/static/css/main.2155d64b.css",
+    "main.js": "/singlePageWebTrain/static/js/main.f87cd1b1.js",
+    "index.html": "/singlePageWebTrain/index.html",
+    "main.2155d64b.css.map": "/singlePageWebTrain/static/css/main.2155d64b.css.map",
+    "main.f87cd1b1.js.map": "/singlePageWebTrain/static/js/main.f87cd1b1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2155d64b.css",
+    "static/js/main.f87cd1b1.js"
+  ]
+}
