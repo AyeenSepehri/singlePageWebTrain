@@ -1,0 +1,45 @@
+root: true
+env:
+  browser: true
+  node: true
+  es6: true
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - prettier
+rules:
+  indent:
+    - error
+    - 4
+    - SwitchCase: 1
+      ignoredNodes:
+        - ConditionalExpression
+      flatTernaryExpressions: true
+  quotes:
+    - error
+    - single
+    - avoidEscape: true
+  semi:
+    - error
+    - never
+  linebreak-style: off
+  react/prop-types: off
+  react/react-in-jsx-scope: off
+  react/display-name: off
+  no-unused-vars:
+    - error
+    - argsIgnorePattern: ^_
+      destructuredArrayIgnorePattern: ^_
+settings:
+  react:
+    version: 17.0.1
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 12
+  sourceType: module
+  babelOptions:
+    presets:
+      - '@babel/preset-env'
+      - '@babel/preset-react'
